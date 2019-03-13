@@ -87,6 +87,14 @@ var config = {
 				showPublishDate: true
 			}
 		},
+	    {
+	        module: 'MMM-Voice-Control',
+	        position: 'top_right', // If you want to see the prompt and recognised speech, omit otherwise
+	        config: {
+	            // See 'Configuration options' for more information
+	        }
+	    },
+
 	]
 
 };
