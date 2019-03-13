@@ -75,7 +75,7 @@ var config = {
 		},*/
 		{
 			module: "newsfeed",
-			position: "top_right",
+			position: "bottom_bar",
 			config: {
 				feeds: [
 					{
@@ -89,7 +89,7 @@ var config = {
 		},
 	    {
 	        module: 'MMM-Voice-Control',
-	        position: 'lower_third', // If you want to see the prompt and recognised speech, omit otherwise
+	        position: 'top_right', // If you want to see the prompt and recognised speech, omit otherwise
 	        config: {
 	            // See 'Configuration options' for more information
 	        }
