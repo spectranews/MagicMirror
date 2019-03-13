@@ -1,0 +1,33 @@
+{
+    "home" : {
+        "commands" : "Dis: \"Que puis-je dire?\" pour voir une liste de commandes..."
+    },
+    "commands": {
+        "title" : "Commandes disponibles",
+        "list": {
+            "text": "Que puis-je dire?",
+            "voice": "Que puis-je dire",
+            "description": "Affiche une liste des commandes vocales disponibles."
+        },
+        "sleep": {
+            "text": "Bonne nuit",
+            "voice": "Bonne nuit",
+            "description": "Va te coucher"
+        },
+        "wake_up": {
+            "text": "Réveille toi",
+            "voice": "Réveille toi",
+            "description": "Réveille Toi"
+        },
+        "dublinbus_start": {
+            "text": "Afficher les horaires de bus",
+            "voice": "Afficher les horaires de bus",
+            "description": "Afficher dublin horaires de bus"
+        },
+        "dublinbus_stop": {
+            "text": "Fermer les horaires de bus",
+            "voice": "Fermer les horaires de bus",
+            "description": "Les périodes de fermeture de bus dublin"
+        }
+    }
+}
