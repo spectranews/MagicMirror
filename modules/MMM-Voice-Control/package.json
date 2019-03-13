@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/dr4ke616/MMM-Voice-Control#readme",
   "dependencies": {
-    "annyang" : "2.x.x"
+    "annyang": "2.x.x"
   }
 }
