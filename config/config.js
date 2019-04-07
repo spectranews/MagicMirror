@@ -22,7 +22,7 @@ var config = {
 	                                                       // ["127.0.0.1", "::ffff:127.0.0.1", "::1", "::ffff:192.168.3.0/28"],
 
 	language: "en",
-	timeFormat: 24,
+	timeFormat: 12,
 	units: "metric",
 
 	modules: [
@@ -79,14 +79,27 @@ var config = {
 			config: {
 				feeds: [
 					{
-						title: "New York Times",
+						title: "Spectra News",
 						url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"
 					}
 				],
-				showSourceTitle: true,
-				showPublishDate: true
+				logFeedWarnings: false,
+				showSourceTitle: false,
+				showPublishDate: false
 			}
 		},
+		// {
+		//     module: 'MMM-json-feed',
+		//     position: 'lower_third',
+		//     config: {
+		//     	title: 'Spectra News',
+		//         urls: [
+		//         	'https://api.myjson.com/bins/omro0',
+		//         ],
+		//         arrayName: "headlines",
+		//         arraySize: 1
+		//     }
+		// },
 	    {
 	        module: 'MMM-Voice-Control',
 	        position: 'top_right', // If you want to see the prompt and recognised speech, omit otherwise

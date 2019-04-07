@@ -13,8 +13,9 @@ Module.register("newsfeed",{
 	defaults: {
 		feeds: [
 			{
-				title: "New York Times",
-				url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+				title: "Spectra News",
+				//url: "http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml",
+				url: "https://spectranews.org/headlines",
 				encoding: "UTF-8" //ISO-8859-1
 			}
 		],
@@ -167,7 +168,8 @@ Module.register("newsfeed",{
 			if(!this.config.showFullArticle){
 				var title = document.createElement("div");
 				title.className = "bright medium light" + (!this.config.wrapTitle ? " no-wrap" : "");
-				title.innerHTML = this.newsItems[this.activeItem].title;
+				title.innerHTML = this.newsItems[this.activeItem];
+				title.id = "headline"
 				wrapper.appendChild(title);
 			}
 
@@ -235,6 +237,7 @@ Module.register("newsfeed",{
 			if (this.subscribedToFeed(feed)) {
 				for (var i in feedItems) {
 					var item = feedItems[i];
+
 					item.sourceTitle = this.titleForFeed(feed);
 					if (!(this.config.ignoreOldItems && ((Date.now() - new Date(item.pubdate)) > this.config.ignoreOlderThan))) {
 						newsItems.push(item);
@@ -325,7 +328,7 @@ Module.register("newsfeed",{
 	},
 
 	resetDescrOrFullArticleAndTimer: function() {
-		this.isShowingDescription = this.config.showDescription;
+		this.isShowingDescription = false;
 		this.config.showFullArticle = false;
 		this.scrollPosition = 0;
 		// reset bottom bar alignment

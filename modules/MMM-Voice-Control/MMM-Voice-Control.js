@@ -50,7 +50,7 @@ Module.register("MMM-Voice-Control", {
 	start: function() {
 		Log.info("**********Starting module: " + this.name);
 
-		
+
 
 		this.annyangService = AnnyangService();
 		this.isListening = false;
@@ -78,6 +78,7 @@ Module.register("MMM-Voice-Control", {
 		var resetCommandTimeout;
 		self.annyangService.start(
 			function() {
+				console.log("It's listening");
 				self.isListening = true;
 			},
 			function(interimResult) {

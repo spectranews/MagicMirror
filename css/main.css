@@ -26,6 +26,16 @@ body {
  * Default styles.
  */
 
+ #qrcode {
+  border-radius: 20%;
+  float: right;
+ }
+
+ #headline {
+  float: none;
+  margin-left: 150px;
+ }
+
 .dimmed {
   color: #666;
 }
@@ -241,3 +251,5 @@ sup {
   border-spacing: 0;
   border-collapse: separate;
 }
+
+
