@@ -62,17 +62,17 @@ var config = {
 				locationID: "",  //ID from http://bulk.openweathermap.org/sample/; unzip the gz file and find your city
 				appid: "YOUR_OPENWEATHER_API_KEY"
 			}
-		},
+		},*/
 		{
 			module: "weatherforecast",
 			position: "top_right",
 			header: "Weather Forecast",
 			config: {
-				location: "New York",
-				locationID: "5128581",  //ID from https://openweathermap.org/city
-				appid: "YOUR_OPENWEATHER_API_KEY"
+				location: "Columbia, MO",
+				locationID: "4381982",  //ID from https://openweathermap.org/city
+				appid: "db0766f21c8d54eac3208b9c1f2a2c93"
 			}
-		},*/
+		},
 		{
 			module: "newsfeed",
 			position: "bottom_bar",
@@ -87,26 +87,7 @@ var config = {
 				showSourceTitle: false,
 				showPublishDate: false
 			}
-		},
-		// {
-		//     module: 'MMM-json-feed',
-		//     position: 'lower_third',
-		//     config: {
-		//     	title: 'Spectra News',
-		//         urls: [
-		//         	'https://api.myjson.com/bins/omro0',
-		//         ],
-		//         arrayName: "headlines",
-		//         arraySize: 1
-		//     }
-		// },
-	    {
-	        module: 'MMM-Voice-Control',
-	        position: 'top_right', // If you want to see the prompt and recognised speech, omit otherwise
-	        config: {
-	            // See 'Configuration options' for more information
-	        }
-	    },
+		}
 
 	]
 

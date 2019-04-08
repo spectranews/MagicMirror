@@ -36,6 +36,11 @@ body {
   margin-left: 150px;
  }
 
+ #sourceText {
+  margin-left: -150px;
+  opacity: 0.5;
+ }
+
 .dimmed {
   color: #666;
 }

@@ -47,9 +47,8 @@ var Fetcher = function(url, reloadInterval, encoding, logFeedWarnings) {
   			body.forEach(function(item) { 
 			  	getQRCode(item.url)
 			  		.then(img => {
-			  			console.log(img)
-			  			items.push(item.title + img);
-			  		//"<div id='spacing-div'>&nbsp;</div>"
+			  			items.push("<div id=sourceText>" + item.source + "</div> <br />" + item.title + img);
+			  		
 			  			if (items.count == body.count) {
 			  				self.broadcastItems();
 			  			}
