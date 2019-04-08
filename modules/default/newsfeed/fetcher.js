@@ -43,12 +43,23 @@ var Fetcher = function(url, reloadInterval, encoding, logFeedWarnings) {
   			console.log('error:', error); // Print the error if one occurred
   			console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
   			console.log('body:', body); // Print the HTML for the Google homepage.
+  			var lastCode = null;
 
   			body.forEach(function(item) { 
 			  	getQRCode(item.url)
 			  		.then(img => {
-			  			items.push("<div id=sourceText>" + item.source + "</div> <br />" + item.title + img);
-			  		
+			  			var fullItem = "<div id=sourceText>" + item.source + "</div> <br />";
+
+			  			if (lastCode != null) { 
+			  				fullItem += lastCode;
+			  			}
+
+			  			fullItem += item.title + img;
+
+			  			lastCode = img.replace("qrcode","previous");
+			  			items.push(fullItem);
+			  			
+			  			
 			  			if (items.count == body.count) {
 			  				self.broadcastItems();
 			  			}
@@ -75,89 +86,6 @@ var Fetcher = function(url, reloadInterval, encoding, logFeedWarnings) {
 	 		});
 	 	});
 	 }
-
-	// var fetchNews = function() {
-	// 	clearTimeout(reloadTimer);
-	// 	reloadTimer = null;
-	// 	myJson = null;
-		
-
-			
-	// 	//items = ["Early Cambridge Analytica fears revealed","Poor People’s Campaign to launch bus tour in South Carolina","Markets Right Now: Stocks are opening lower on Wall Street","Who Will Be Thailand’s Next Prime Minister?","Analyzing Kazakhstan’s First Tenure at the UN Security Council","Emilia, Vaudeville Theatre, review: a galvanising slice of agit prop for the #MeToo generation","Most promising Alzheimer’s drug trial ends in failure: ‘We are getting pretty desperate’","India-Indonesia Naval Patrols Highlights Maritime Collaboration","Relative of African dictator admits to counterfeiting money","Singapore, Thailand, Vietnam & Hong Kong"];
-
-	// 	items = null;
-	// 	request('https://spectranews.org/headlines', function (error, response, body) {
- //  			console.log('error:', error); // Print the error if one occurred
- //  			console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
- //  			console.log('body:', body); // Print the HTML for the Google homepage.
- //  			items = body
-		
-
-
-		
-
-	// 	var parser = new FeedMe();
-	// 	console.log("pre parsing");
-	// 	parser.on("item", function(item) {
-	// 		console.log("parsing");
-	// 		console.log("--------------\n\nITEMS:" + items);
-	// 		// var options = {compact: true, ignoreComment: true, spaces: 4};
-	// 		// item = convert.json2xml(json,options);
-	// 		// console.log(item)
-	// 		var title = item.title;
-	// 		var description = item.description || item.summary || item.content || "";
-	// 		var pubdate = item.pubdate || item.published || item.updated || item["dc:date"];
-	// 		var url = item.url || item.link || "";
-
-	// 		if (title && pubdate) {
-
-	// 			var regex = /(<([^>]+)>)/ig;
-	// 			description = description.toString().replace(regex, "");
-
-	// 			items.push({
-	// 				title: title,
-	// 				description: description,
-	// 				pubdate: pubdate,
-	// 				url: url,
-	// 			});
-
-	// 		} else if (logFeedWarnings) {
-	// 			console.log("Can't parse feed item:");
-	// 			console.log(item + "ITEM ");
-	// 			console.log("Title: " + title);
-	// 			console.log("Description: " + description);
-	// 			console.log("Pubdate: " + pubdate);
-	// 		}
-	// 	});
-
-	// 	parser.on("end",	function() {
-	// 		console.log("end parsing - " + url);
-	// 		self.broadcastItems();
-	// 		scheduleTimer();
-	// 	});
-
-	// 	parser.on("error", function(error) {
-	// 		console.log("ERRORRRRR")
-	// 		fetchFailedCallback(self, error);
-	// 		scheduleTimer();
-	// 	});
-
-
-	// 	nodeVersion = Number(process.version.match(/^v(\d+\.\d+)/)[1]);
-	// 	headers =	{"User-Agent": "Mozilla/5.0 (Node.js "+ nodeVersion + ") MagicMirror/"	+ global.version +	" (https://github.com/MichMich/MagicMirror/)",
-	// 		"Cache-Control": "max-age=0, no-cache, no-store, must-revalidate",
-	// 		"Pragma": "no-cache"}
-
-	// 	request({uri: url, encoding: null, headers: headers})
-	// 		.on("error", function(error) {
-	// 			console.log("REQUEST ERROR");
-	// 			fetchFailedCallback(self, error);
-	// 			scheduleTimer();
-	// 		})
-	// 		.pipe(iconv.decodeStream(encoding)).pipe(parser);
-	// 	});
-
-	// };
 
 	/* scheduleTimer()
 	 * Schedule the timer for the next update.

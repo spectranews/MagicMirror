@@ -31,6 +31,15 @@ body {
   float: right;
  }
 
+ #previous {
+  border-radius: 20%;
+  margin: 0px;
+  float: left;
+  position: absolute;
+  bottom: 5px;
+  left: 15px;
+ }
+
  #headline {
   float: none;
   margin-left: 150px;

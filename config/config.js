@@ -7,8 +7,6 @@
  * See https://github.com/MichMich/MagicMirror#configuration
  *
  */
- var keys = require('./keys');
- var weatherKey = new OpenWeather(keys.openWeather);
 
 var config = {
 	address: "localhost", // Address to listen on, can be:
@@ -62,7 +60,8 @@ var config = {
 			config: {
 				location: "Columbia, MO",
 				locationID: "4381982",  //ID from http://bulk.openweathermap.org/sample/; unzip the gz file and find your city
-				appid: weatherKey
+				appid: 'a5ad9bfd742938a7179ffdfe1b9e354d',
+				units: 'imperial',
 			}
 		},
 		/*{
