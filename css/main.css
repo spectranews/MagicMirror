@@ -40,6 +40,13 @@ body {
   left: 15px;
  }
 
+ #previousLabel {
+  float: left;
+  position: absolute;
+  left: 40px;
+  bottom: 160px;
+ }
+
  #headline {
   float: none;
   margin-left: 150px;

@@ -48,7 +48,11 @@ var Fetcher = function(url, reloadInterval, encoding, logFeedWarnings) {
   			body.forEach(function(item) { 
 			  	getQRCode(item.url)
 			  		.then(img => {
-			  			var fullItem = "<div id=sourceText>" + item.source + "</div> <br />";
+			  			var fullItem = "";
+			  			if (lastCode != null) {
+			  				fullItem += "<div id=previousLabel> Previous </div>";
+			  			}
+			  			fullItem += "<div id=sourceText>" + item.source + "</div> <br />";
 
 			  			if (lastCode != null) { 
 			  				fullItem += lastCode;
