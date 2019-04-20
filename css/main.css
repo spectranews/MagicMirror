@@ -7,7 +7,7 @@ html {
 ::-webkit-scrollbar {
   display: none;
 }
-
+ 
 body {
   margin: 60px;
   position: absolute;
@@ -28,33 +28,43 @@ body {
 
  #qrcode {
   border-radius: 20%;
+  padding: 20px;
   float: right;
+
  }
 
  #previous {
   border-radius: 20%;
-  margin: 0px;
+  padding: 20px;
   float: left;
   position: absolute;
-  bottom: 5px;
-  left: 15px;
+  left: -5px;
  }
 
  #previousLabel {
   float: left;
   position: absolute;
-  left: 40px;
-  bottom: 160px;
+  left: 42px;
+  bottom: 170px;
+ }
+
+ #ourHeadline {
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
  }
 
  #headline {
   float: none;
-  margin-left: 150px;
  }
 
  #sourceText {
-  margin-left: -150px;
   opacity: 0.5;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
  }
 
 .dimmed {

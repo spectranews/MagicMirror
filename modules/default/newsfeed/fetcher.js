@@ -58,7 +58,7 @@ var Fetcher = function(url, reloadInterval, encoding, logFeedWarnings) {
 			  				fullItem += lastCode;
 			  			}
 
-			  			fullItem += item.title + img;
+			  			fullItem += "<div id=ourHeadline>" + item.title + "</div>"+ img;
 
 			  			lastCode = img.replace("qrcode","previous");
 			  			items.push(fullItem);
